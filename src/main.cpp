@@ -1,3 +1,4 @@
+#include <iostream>
 #include <SFML/Graphics.hpp>
 
 int main()
@@ -11,8 +12,19 @@ int main()
 		sf::Event event;
         while (window.pollEvent(event))
         {
-            if (event.type==sf::Event::Closed)
+            if (event.type == sf::Event::Closed)
+            {
                 window.close();
+            }
+
+            if (event.type == sf::Event::KeyReleased)
+            {
+                if (event.key.code == sf::Keyboard::W)
+                {
+
+                std::cout << "A Key is Pressed" << std::endl;
+                }
+            }
         }
 
         window.clear();
