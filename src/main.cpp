@@ -9,7 +9,18 @@ std::cout << "Working Directory: " << std::filesystem::current_path() << std::en
   /*  sf::RectangleShape shape(sf::Vector2f(100,50));*/
 
 	sf::Texture texture;
-	texture.loadFromFile("./main.png");
+	texture.loadFromFile("./assets/main.png");
+
+    //setup font and text
+    sf::Font font;
+    font.loadFromFile("./assets/OpenSans-Bold.ttf");
+    sf::Text text;
+    text.setFont(font);
+ 
+    text.setString("MINECRAFT");
+    text.setPosition((200.0f - text.getGlobalBounds().width / 2), 0.0f);
+    
+
     sf::Sprite sprite(texture);
 	sprite.setScale(0.1f, 0.1f); 
 
@@ -54,6 +65,7 @@ std::cout << "Working Directory: " << std::filesystem::current_path() << std::en
 
         window.clear();
         window.draw(sprite);
+        window.draw(text);
         window.display();
     }
-}
+} 
