@@ -7,7 +7,7 @@ int main()
 std::cout << "Working Directory: " << std::filesystem::current_path() << std::endl;
     sf::RenderWindow window(sf::VideoMode({ 400, 400 }), "My SFML");
   /*  sf::RectangleShape shape(sf::Vector2f(100,50));*/
-
+    window.setFramerateLimit(60);
 	sf::Texture texture;
 	texture.loadFromFile("./assets/main.png");
 
@@ -16,6 +16,8 @@ std::cout << "Working Directory: " << std::filesystem::current_path() << std::en
     font.loadFromFile("./assets/OpenSans-Bold.ttf");
     sf::Text text;
     text.setFont(font);
+
+    sf::Clock clock;
  
     text.setString("MINECRAFT");
     text.setPosition((200.0f - text.getGlobalBounds().width / 2), 0.0f);
@@ -31,6 +33,10 @@ std::cout << "Working Directory: " << std::filesystem::current_path() << std::en
     while (window.isOpen())
     {
 		sf::Event event;
+        float currentTime =clock.restart().asSeconds();
+        float fps = 1.0f/(currentTime);
+
+        std::cout << "fps: " << fps << std::endl;
    
         while (window.pollEvent(event))
         {
@@ -57,7 +63,7 @@ std::cout << "Working Directory: " << std::filesystem::current_path() << std::en
         }
 
         sprite.setPosition(xPos, 0.0f);
-        xPos+=0.001f;
+        xPos+=0.5f;
         if (xPos > 400)
         {
             xPos = 0;
