@@ -1,77 +1,47 @@
-#include <iostream>
-#include <SFML/Graphics.hpp>
-#include <filesystem>
+#include<iostream>
+#include<SFML/Graphics.hpp>
 
 int main()
 {
-std::cout << "Working Directory: " << std::filesystem::current_path() << std::endl;
-    sf::RenderWindow window(sf::VideoMode({ 400, 400 }), "My SFML");
-  /*  sf::RectangleShape shape(sf::Vector2f(100,50));*/
-    window.setFramerateLimit(60);
-	sf::Texture texture;
-	texture.loadFromFile("./assets/main.png");
+	sf::RenderWindow window(sf::VideoMode(960, 540), "SFML WINDOW");
+	//window.setFramerateLimit(60);
 
-    //setup font and text
-    sf::Font font;
-    font.loadFromFile("./assets/OpenSans-Bold.ttf");
-    sf::Text text;
-    text.setFont(font);
+	sf::Clock clock;
 
-    sf::Clock clock;
- 
-    text.setString("MINECRAFT");
-    text.setPosition((200.0f - text.getGlobalBounds().width / 2), 0.0f);
-    
+	sf::CircleShape shape(50.f);
+	shape.setFillColor(sf::Color::Green);
+	shape.setPosition(200.f, 200.f);
+	shape.setOutlineColor(sf::Color::White);
+	shape.setOutlineThickness(3.f);
+	while (window.isOpen())
+	{
+		float deltaTime = clock.restart().asSeconds();
+		std::cout << "FPS: " << 1 / deltaTime<<std::endl;
 
-    sf::Sprite sprite(texture);
-	sprite.setScale(0.1f, 0.1f); 
-
-    //shape.setFillColor(sf::Color::Green);
-
-    float xPos{ 0.0f };
-
-    while (window.isOpen())
-    {
 		sf::Event event;
-        float currentTime =clock.restart().asSeconds();
-        float fps = 1.0f/(currentTime);
-
-        std::cout << "fps: " << fps << std::endl;
-   
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-            {
-                window.close();
-            }
-
-            if (event.type == sf::Event::KeyReleased)
-            {
-                if (event.key.code == sf::Keyboard::W)
-                {
-
-                std::cout << "A Key is Pressed" << std::endl;  
-                }
-            }
+		while (window.pollEvent(event))
+		{
+			if (event.type == sf::Event::Closed)
+			{
+				std::cout << "WINDOWWWWWWWWW CLOSSSSSSINGGGGG" << std::endl;
+				window.close();
+			}
 
 
-            if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
-            {
-                std::cout << "Left Mouse Button Pressed" << std::endl;
-            }
+			if (event.type == sf::Event::KeyPressed)
+			{
+				if (event.key.code == sf::Keyboard::D)
+				{
+					sf::Vector2f pos = shape.getPosition();
+					shape.setPosition(pos.x + 1,pos.y);
+				}
+			}
 
-        }
+		}
+		shape.move(1.f*deltaTime, 0.f);
 
-        sprite.setPosition(xPos, 0.0f);
-        xPos+=0.5f;
-        if (xPos > 400)
-        {
-            xPos = 0;
-        }
-
-        window.clear();
-        window.draw(sprite);
-        window.draw(text);
-        window.display();
-    }
-} 
+		window.clear(sf::Color::Black);
+		window.draw(shape);
+		window.display();
+	}
+}
