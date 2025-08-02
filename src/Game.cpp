@@ -1,9 +1,13 @@
 #include "Game.h"
 #include <iostream>
 
-Game::Game():window(sf::VideoMode(1024,768),"SFML GAME"),deltaTime{0.f},ball(25.f, sf::Vector2f(400.f, 300.f),sf::Color::Green, sf::Vector2f(400.f, 150.f))
+Game::Game():window(sf::VideoMode(1024,768),"SFML GAME"),deltaTime{0.f},
+ball1(25.f, sf::Vector2f(400.f, 300.f), sf::Color::Green, sf::Vector2f(400.f, 150.f)),
+ball2(30.f, sf::Vector2f(900.f, 150.f), sf::Color::White, sf::Vector2f(1000.f, 750.f))
 {
 	window.setFramerateLimit(120);
+	
+	
 }
 
 void Game::HandleEvents()
@@ -25,7 +29,8 @@ void Game::HandleEvents()
 void Game::Update()
 {
 	deltaTime = deltaClock.restart().asSeconds();
-	ball.Update(deltaTime, window.getSize().x, window.getSize().y);
+	ball1.Update(deltaTime, window.getSize().x, window.getSize().y);
+	ball2.Update(deltaTime, window.getSize().x, window.getSize().y);
 
 	sf::Time elapsed = elapsedClock.getElapsedTime();
 
@@ -42,7 +47,8 @@ void Game::Render()
 {
 	window.clear();
 	//draw
-	ball.Draw(window);
+	ball1.Draw(window);
+	ball2.Draw(window);
 	window.display();
 }
 

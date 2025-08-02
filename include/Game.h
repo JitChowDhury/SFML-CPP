@@ -10,7 +10,8 @@ private:
 	sf::Clock deltaClock;   
 	sf::Clock elapsedClock;
 	float deltaTime;
-	Ball ball;
+	Ball ball1;
+	Ball ball2;
 
 
 
