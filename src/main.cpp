@@ -16,7 +16,7 @@ int main()
 	while (window.isOpen())
 	{
 		float deltaTime = clock.restart().asSeconds();
-		std::cout << "FPS: " << 1 / deltaTime<<std::endl;
+		std::cout << "FPS: " << 1 / deltaTime << std::endl;
 
 		sf::Event event;
 		while (window.pollEvent(event))
@@ -33,12 +33,12 @@ int main()
 				if (event.key.code == sf::Keyboard::D)
 				{
 					sf::Vector2f pos = shape.getPosition();
-					shape.setPosition(pos.x + 1,pos.y);
+					shape.setPosition(pos.x + 1, pos.y);
 				}
 			}
 
 		}
-		shape.move(1.f*deltaTime, 0.f);
+		shape.move(1.f * deltaTime, 0.f);
 
 		window.clear(sf::Color::Black);
 		window.draw(shape);

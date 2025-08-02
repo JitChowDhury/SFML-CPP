@@ -92,17 +92,12 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
       <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
-      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
       <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <MinimalRebuild></MinimalRebuild>
       <Optimization>Disabled</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <RemoveUnreferencedCodeData></RemoveUnreferencedCodeData>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
-      <SupportJustMyCode></SupportJustMyCode>
-      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
       <UseFullPaths>false</UseFullPaths>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
@@ -121,17 +116,13 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\sfml-graphics-d.lib;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\sfml-window-d.lib;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\sfml-system-d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\sfml-graphics-d.lib;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\sfml-window-d.lib;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\sfml-network-d.lib;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\sfml-audio-d.lib;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\sfml-system-d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
-      <DataExecutionPrevention></DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
       <ImportLibrary>E:/CODE/C++/SFML/LearnSFML/build/Debug/MySFMLProject.lib</ImportLibrary>
-      <LinkErrorReporting></LinkErrorReporting>
       <ProgramDataBaseFile>E:/CODE/C++/SFML/LearnSFML/build/Debug/MySFMLProject.pdb</ProgramDataBaseFile>
-      <RandomizedBaseAddress></RandomizedBaseAddress>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -142,20 +133,14 @@
     <ClCompile>
       <AdditionalOptions>%(AdditionalOptions) /external:I "H:/Downloads/SFML-2.6.2-windows-vc17-64-bit/SFML-2.6.2/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
-      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <ExceptionHandling>Sync</ExceptionHandling>
       <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
-      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <MinimalRebuild></MinimalRebuild>
       <Optimization>MaxSpeed</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <RemoveUnreferencedCodeData></RemoveUnreferencedCodeData>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
-      <SupportJustMyCode></SupportJustMyCode>
-      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
       <UseFullPaths>false</UseFullPaths>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
@@ -176,17 +161,13 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\sfml-graphics.lib;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\sfml-window.lib;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\sfml-system.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\sfml-graphics.lib;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\sfml-window.lib;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\sfml-network.lib;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\sfml-audio.lib;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\sfml-system.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
-      <DataExecutionPrevention></DataExecutionPrevention>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
       <ImportLibrary>E:/CODE/C++/SFML/LearnSFML/build/Release/MySFMLProject.lib</ImportLibrary>
-      <LinkErrorReporting></LinkErrorReporting>
       <ProgramDataBaseFile>E:/CODE/C++/SFML/LearnSFML/build/Release/MySFMLProject.pdb</ProgramDataBaseFile>
-      <RandomizedBaseAddress></RandomizedBaseAddress>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -197,20 +178,14 @@
     <ClCompile>
       <AdditionalOptions>%(AdditionalOptions) /external:I "H:/Downloads/SFML-2.6.2-windows-vc17-64-bit/SFML-2.6.2/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
-      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <ExceptionHandling>Sync</ExceptionHandling>
       <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
-      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <MinimalRebuild></MinimalRebuild>
       <Optimization>MinSpace</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <RemoveUnreferencedCodeData></RemoveUnreferencedCodeData>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
-      <SupportJustMyCode></SupportJustMyCode>
-      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
       <UseFullPaths>false</UseFullPaths>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
@@ -231,17 +206,13 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\sfml-graphics-d.lib;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\sfml-window-d.lib;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\sfml-system-d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\sfml-graphics-d.lib;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\sfml-window-d.lib;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\sfml-network-d.lib;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\sfml-audio-d.lib;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\sfml-system-d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
-      <DataExecutionPrevention></DataExecutionPrevention>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
       <ImportLibrary>E:/CODE/C++/SFML/LearnSFML/build/MinSizeRel/MySFMLProject.lib</ImportLibrary>
-      <LinkErrorReporting></LinkErrorReporting>
       <ProgramDataBaseFile>E:/CODE/C++/SFML/LearnSFML/build/MinSizeRel/MySFMLProject.pdb</ProgramDataBaseFile>
-      <RandomizedBaseAddress></RandomizedBaseAddress>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -252,21 +223,15 @@
     <ClCompile>
       <AdditionalOptions>%(AdditionalOptions) /external:I "H:/Downloads/SFML-2.6.2-windows-vc17-64-bit/SFML-2.6.2/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
-      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
       <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
-      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <MinimalRebuild></MinimalRebuild>
       <Optimization>MaxSpeed</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <RemoveUnreferencedCodeData></RemoveUnreferencedCodeData>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
-      <SupportJustMyCode></SupportJustMyCode>
-      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
       <UseFullPaths>false</UseFullPaths>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
@@ -285,17 +250,13 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\sfml-graphics-d.lib;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\sfml-window-d.lib;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\sfml-system-d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\sfml-graphics-d.lib;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\sfml-window-d.lib;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\sfml-network-d.lib;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\sfml-audio-d.lib;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\sfml-system-d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
-      <DataExecutionPrevention></DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
       <ImportLibrary>E:/CODE/C++/SFML/LearnSFML/build/RelWithDebInfo/MySFMLProject.lib</ImportLibrary>
-      <LinkErrorReporting></LinkErrorReporting>
       <ProgramDataBaseFile>E:/CODE/C++/SFML/LearnSFML/build/RelWithDebInfo/MySFMLProject.pdb</ProgramDataBaseFile>
-      <RandomizedBaseAddress></RandomizedBaseAddress>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -307,7 +268,7 @@
       <UseUtf8Encoding>Always</UseUtf8Encoding>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule E:/CODE/C++/SFML/LearnSFML/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SE:/CODE/C++/SFML/LearnSFML -BE:/CODE/C++/SFML/LearnSFML/build --check-stamp-file E:/CODE/C++/SFML/LearnSFML/build/CMakeFiles/generate.stamp
+C:\mingw64\bin\cmake.exe -SE:/CODE/C++/SFML/LearnSFML -BE:/CODE/C++/SFML/LearnSFML/build --check-stamp-file E:/CODE/C++/SFML/LearnSFML/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -315,12 +276,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Linker\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Linker\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\WindowsPaths.cmake;E:\CODE\C++\SFML\LearnSFML\build\CMakeFiles\4.1.0-rc3\CMakeCXXCompiler.cmake;E:\CODE\C++\SFML\LearnSFML\build\CMakeFiles\4.1.0-rc3\CMakeRCCompiler.cmake;E:\CODE\C++\SFML\LearnSFML\build\CMakeFiles\4.1.0-rc3\CMakeSystem.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLConfig.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLConfigDependencies.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLConfigVersion.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLSharedTargets-debug.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLSharedTargets-release.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLSharedTargets.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\mingw64\share\cmake-3.29\Modules\CMakeCXXInformation.cmake;C:\mingw64\share\cmake-3.29\Modules\CMakeCommonLanguageInclude.cmake;C:\mingw64\share\cmake-3.29\Modules\CMakeGenericSystem.cmake;C:\mingw64\share\cmake-3.29\Modules\CMakeInitializeConfigs.cmake;C:\mingw64\share\cmake-3.29\Modules\CMakeLanguageInformation.cmake;C:\mingw64\share\cmake-3.29\Modules\CMakeRCInformation.cmake;C:\mingw64\share\cmake-3.29\Modules\CMakeSystemSpecificInformation.cmake;C:\mingw64\share\cmake-3.29\Modules\CMakeSystemSpecificInitialize.cmake;C:\mingw64\share\cmake-3.29\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\mingw64\share\cmake-3.29\Modules\Compiler\MSVC-CXX.cmake;C:\mingw64\share\cmake-3.29\Modules\Compiler\MSVC.cmake;C:\mingw64\share\cmake-3.29\Modules\Platform\Windows-Initialize.cmake;C:\mingw64\share\cmake-3.29\Modules\Platform\Windows-MSVC-CXX.cmake;C:\mingw64\share\cmake-3.29\Modules\Platform\Windows-MSVC.cmake;C:\mingw64\share\cmake-3.29\Modules\Platform\Windows.cmake;C:\mingw64\share\cmake-3.29\Modules\Platform\WindowsPaths.cmake;E:\CODE\C++\SFML\LearnSFML\build\CMakeFiles\3.29.3\CMakeCXXCompiler.cmake;E:\CODE\C++\SFML\LearnSFML\build\CMakeFiles\3.29.3\CMakeRCCompiler.cmake;E:\CODE\C++\SFML\LearnSFML\build\CMakeFiles\3.29.3\CMakeSystem.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLConfig.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLConfigDependencies.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLConfigVersion.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLSharedTargets-debug.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLSharedTargets-release.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLSharedTargets.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\CODE\C++\SFML\LearnSFML\build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule E:/CODE/C++/SFML/LearnSFML/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SE:/CODE/C++/SFML/LearnSFML -BE:/CODE/C++/SFML/LearnSFML/build --check-stamp-file E:/CODE/C++/SFML/LearnSFML/build/CMakeFiles/generate.stamp
+C:\mingw64\bin\cmake.exe -SE:/CODE/C++/SFML/LearnSFML -BE:/CODE/C++/SFML/LearnSFML/build --check-stamp-file E:/CODE/C++/SFML/LearnSFML/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -328,12 +289,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Linker\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Linker\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\WindowsPaths.cmake;E:\CODE\C++\SFML\LearnSFML\build\CMakeFiles\4.1.0-rc3\CMakeCXXCompiler.cmake;E:\CODE\C++\SFML\LearnSFML\build\CMakeFiles\4.1.0-rc3\CMakeRCCompiler.cmake;E:\CODE\C++\SFML\LearnSFML\build\CMakeFiles\4.1.0-rc3\CMakeSystem.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLConfig.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLConfigDependencies.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLConfigVersion.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLSharedTargets-debug.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLSharedTargets-release.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLSharedTargets.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\mingw64\share\cmake-3.29\Modules\CMakeCXXInformation.cmake;C:\mingw64\share\cmake-3.29\Modules\CMakeCommonLanguageInclude.cmake;C:\mingw64\share\cmake-3.29\Modules\CMakeGenericSystem.cmake;C:\mingw64\share\cmake-3.29\Modules\CMakeInitializeConfigs.cmake;C:\mingw64\share\cmake-3.29\Modules\CMakeLanguageInformation.cmake;C:\mingw64\share\cmake-3.29\Modules\CMakeRCInformation.cmake;C:\mingw64\share\cmake-3.29\Modules\CMakeSystemSpecificInformation.cmake;C:\mingw64\share\cmake-3.29\Modules\CMakeSystemSpecificInitialize.cmake;C:\mingw64\share\cmake-3.29\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\mingw64\share\cmake-3.29\Modules\Compiler\MSVC-CXX.cmake;C:\mingw64\share\cmake-3.29\Modules\Compiler\MSVC.cmake;C:\mingw64\share\cmake-3.29\Modules\Platform\Windows-Initialize.cmake;C:\mingw64\share\cmake-3.29\Modules\Platform\Windows-MSVC-CXX.cmake;C:\mingw64\share\cmake-3.29\Modules\Platform\Windows-MSVC.cmake;C:\mingw64\share\cmake-3.29\Modules\Platform\Windows.cmake;C:\mingw64\share\cmake-3.29\Modules\Platform\WindowsPaths.cmake;E:\CODE\C++\SFML\LearnSFML\build\CMakeFiles\3.29.3\CMakeCXXCompiler.cmake;E:\CODE\C++\SFML\LearnSFML\build\CMakeFiles\3.29.3\CMakeRCCompiler.cmake;E:\CODE\C++\SFML\LearnSFML\build\CMakeFiles\3.29.3\CMakeSystem.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLConfig.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLConfigDependencies.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLConfigVersion.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLSharedTargets-debug.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLSharedTargets-release.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLSharedTargets.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\CODE\C++\SFML\LearnSFML\build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule E:/CODE/C++/SFML/LearnSFML/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SE:/CODE/C++/SFML/LearnSFML -BE:/CODE/C++/SFML/LearnSFML/build --check-stamp-file E:/CODE/C++/SFML/LearnSFML/build/CMakeFiles/generate.stamp
+C:\mingw64\bin\cmake.exe -SE:/CODE/C++/SFML/LearnSFML -BE:/CODE/C++/SFML/LearnSFML/build --check-stamp-file E:/CODE/C++/SFML/LearnSFML/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -341,12 +302,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Linker\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Linker\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\WindowsPaths.cmake;E:\CODE\C++\SFML\LearnSFML\build\CMakeFiles\4.1.0-rc3\CMakeCXXCompiler.cmake;E:\CODE\C++\SFML\LearnSFML\build\CMakeFiles\4.1.0-rc3\CMakeRCCompiler.cmake;E:\CODE\C++\SFML\LearnSFML\build\CMakeFiles\4.1.0-rc3\CMakeSystem.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLConfig.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLConfigDependencies.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLConfigVersion.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLSharedTargets-debug.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLSharedTargets-release.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLSharedTargets.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\mingw64\share\cmake-3.29\Modules\CMakeCXXInformation.cmake;C:\mingw64\share\cmake-3.29\Modules\CMakeCommonLanguageInclude.cmake;C:\mingw64\share\cmake-3.29\Modules\CMakeGenericSystem.cmake;C:\mingw64\share\cmake-3.29\Modules\CMakeInitializeConfigs.cmake;C:\mingw64\share\cmake-3.29\Modules\CMakeLanguageInformation.cmake;C:\mingw64\share\cmake-3.29\Modules\CMakeRCInformation.cmake;C:\mingw64\share\cmake-3.29\Modules\CMakeSystemSpecificInformation.cmake;C:\mingw64\share\cmake-3.29\Modules\CMakeSystemSpecificInitialize.cmake;C:\mingw64\share\cmake-3.29\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\mingw64\share\cmake-3.29\Modules\Compiler\MSVC-CXX.cmake;C:\mingw64\share\cmake-3.29\Modules\Compiler\MSVC.cmake;C:\mingw64\share\cmake-3.29\Modules\Platform\Windows-Initialize.cmake;C:\mingw64\share\cmake-3.29\Modules\Platform\Windows-MSVC-CXX.cmake;C:\mingw64\share\cmake-3.29\Modules\Platform\Windows-MSVC.cmake;C:\mingw64\share\cmake-3.29\Modules\Platform\Windows.cmake;C:\mingw64\share\cmake-3.29\Modules\Platform\WindowsPaths.cmake;E:\CODE\C++\SFML\LearnSFML\build\CMakeFiles\3.29.3\CMakeCXXCompiler.cmake;E:\CODE\C++\SFML\LearnSFML\build\CMakeFiles\3.29.3\CMakeRCCompiler.cmake;E:\CODE\C++\SFML\LearnSFML\build\CMakeFiles\3.29.3\CMakeSystem.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLConfig.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLConfigDependencies.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLConfigVersion.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLSharedTargets-debug.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLSharedTargets-release.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLSharedTargets.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:\CODE\C++\SFML\LearnSFML\build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule E:/CODE/C++/SFML/LearnSFML/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SE:/CODE/C++/SFML/LearnSFML -BE:/CODE/C++/SFML/LearnSFML/build --check-stamp-file E:/CODE/C++/SFML/LearnSFML/build/CMakeFiles/generate.stamp
+C:\mingw64\bin\cmake.exe -SE:/CODE/C++/SFML/LearnSFML -BE:/CODE/C++/SFML/LearnSFML/build --check-stamp-file E:/CODE/C++/SFML/LearnSFML/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -354,7 +315,7 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Linker\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Linker\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\WindowsPaths.cmake;E:\CODE\C++\SFML\LearnSFML\build\CMakeFiles\4.1.0-rc3\CMakeCXXCompiler.cmake;E:\CODE\C++\SFML\LearnSFML\build\CMakeFiles\4.1.0-rc3\CMakeRCCompiler.cmake;E:\CODE\C++\SFML\LearnSFML\build\CMakeFiles\4.1.0-rc3\CMakeSystem.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLConfig.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLConfigDependencies.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLConfigVersion.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLSharedTargets-debug.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLSharedTargets-release.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLSharedTargets.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\mingw64\share\cmake-3.29\Modules\CMakeCXXInformation.cmake;C:\mingw64\share\cmake-3.29\Modules\CMakeCommonLanguageInclude.cmake;C:\mingw64\share\cmake-3.29\Modules\CMakeGenericSystem.cmake;C:\mingw64\share\cmake-3.29\Modules\CMakeInitializeConfigs.cmake;C:\mingw64\share\cmake-3.29\Modules\CMakeLanguageInformation.cmake;C:\mingw64\share\cmake-3.29\Modules\CMakeRCInformation.cmake;C:\mingw64\share\cmake-3.29\Modules\CMakeSystemSpecificInformation.cmake;C:\mingw64\share\cmake-3.29\Modules\CMakeSystemSpecificInitialize.cmake;C:\mingw64\share\cmake-3.29\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\mingw64\share\cmake-3.29\Modules\Compiler\MSVC-CXX.cmake;C:\mingw64\share\cmake-3.29\Modules\Compiler\MSVC.cmake;C:\mingw64\share\cmake-3.29\Modules\Platform\Windows-Initialize.cmake;C:\mingw64\share\cmake-3.29\Modules\Platform\Windows-MSVC-CXX.cmake;C:\mingw64\share\cmake-3.29\Modules\Platform\Windows-MSVC.cmake;C:\mingw64\share\cmake-3.29\Modules\Platform\Windows.cmake;C:\mingw64\share\cmake-3.29\Modules\Platform\WindowsPaths.cmake;E:\CODE\C++\SFML\LearnSFML\build\CMakeFiles\3.29.3\CMakeCXXCompiler.cmake;E:\CODE\C++\SFML\LearnSFML\build\CMakeFiles\3.29.3\CMakeRCCompiler.cmake;E:\CODE\C++\SFML\LearnSFML\build\CMakeFiles\3.29.3\CMakeSystem.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLConfig.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLConfigDependencies.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLConfigVersion.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLSharedTargets-debug.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLSharedTargets-release.cmake;H:\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib\cmake\SFML\SFMLSharedTargets.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:\CODE\C++\SFML\LearnSFML\build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
@@ -362,7 +323,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemGroup>
     <ClCompile Include="E:\CODE\C++\SFML\LearnSFML\src\main.cpp" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="E:\CODE\C++\SFML\LearnSFML\build\ZERO_CHECK.vcxproj">
       <Project>{C6ADA485-A73C-33FB-9F6B-867E9012E9F0}</Project>

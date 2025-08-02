@@ -26,6 +26,8 @@ target_link_libraries(${PROJECT_NAME}
     sfml-graphics
     sfml-window
     sfml-system
+    sfml-network
+    sfml-audio
 )
 
 # 8. Optional: Make sure SFML include directories are added
