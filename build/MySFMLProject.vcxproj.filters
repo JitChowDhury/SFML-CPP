@@ -4,11 +4,22 @@
     <ClCompile Include="E:\CODE\C++\SFML\LearnSFML\src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="E:\CODE\C++\SFML\LearnSFML\src\Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="E:\CODE\C++\SFML\LearnSFML\include\Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="E:\CODE\C++\SFML\LearnSFML\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{CF2AD00C-0130-3AD6-A8D8-C074887ED22B}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{CAA0EEFC-0E0E-32CF-A6FF-6CD42B2CB474}</UniqueIdentifier>
     </Filter>

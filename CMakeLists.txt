@@ -19,6 +19,8 @@ find_package(SFML 2.5 COMPONENTS graphics window system REQUIRED)
 # 6. Add your source file (src/main.cpp)
 add_executable(${PROJECT_NAME}
     src/main.cpp
+    src/Game.cpp
+    include/Game.h
 )
 
 # 7. Link SFML libraries to your executable
@@ -31,4 +33,7 @@ target_link_libraries(${PROJECT_NAME}
 )
 
 # 8. Optional: Make sure SFML include directories are added
-target_include_directories(${PROJECT_NAME} PRIVATE ${SFML_INCLUDE_DIR})
+target_include_directories(${PROJECT_NAME} PRIVATE
+    ${SFML_INCLUDE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
