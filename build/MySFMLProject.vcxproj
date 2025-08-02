@@ -327,7 +327,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemGroup>
     <ClCompile Include="E:\CODE\C++\SFML\LearnSFML\src\main.cpp" />
     <ClCompile Include="E:\CODE\C++\SFML\LearnSFML\src\Game.cpp" />
+    <ClCompile Include="E:\CODE\C++\SFML\LearnSFML\src\Ball.cpp" />
     <ClInclude Include="E:\CODE\C++\SFML\LearnSFML\include\Game.h" />
+    <ClInclude Include="E:\CODE\C++\SFML\LearnSFML\include\Ball.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="E:\CODE\C++\SFML\LearnSFML\build\ZERO_CHECK.vcxproj">
