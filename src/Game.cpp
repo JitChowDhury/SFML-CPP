@@ -1,8 +1,9 @@
 #include "Game.h"
+#include <iostream>
 
-Game::Game():window(sf::VideoMode(940,560),"SFML GAME"),deltaTime{0.f},ball(20.f, sf::Vector2f(400.f, 300.f),sf::Color::Magenta, sf::Vector2f(200.f, 150.f))
+Game::Game():window(sf::VideoMode(1024,768),"SFML GAME"),deltaTime{0.f},ball(25.f, sf::Vector2f(400.f, 300.f),sf::Color::Green, sf::Vector2f(400.f, 150.f))
 {
-	window.setFramerateLimit(60);
+	window.setFramerateLimit(120);
 }
 
 void Game::HandleEvents()
@@ -23,8 +24,18 @@ void Game::HandleEvents()
 
 void Game::Update()
 {
-	deltaTime = clock.restart().asSeconds();
+	deltaTime = deltaClock.restart().asSeconds();
 	ball.Update(deltaTime, window.getSize().x, window.getSize().y);
+
+	sf::Time elapsed = elapsedClock.getElapsedTime();
+
+	if (elapsed.asSeconds() >= 1.0f)
+	{
+	std::cout << "FPS: " << 1 / deltaTime << std::endl;
+	elapsedClock.restart();
+
+	}
+
 }
 
 void Game::Render()

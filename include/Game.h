@@ -7,7 +7,8 @@ class Game
 {
 private:
 	sf::RenderWindow window;
-	sf::Clock clock;
+	sf::Clock deltaClock;   
+	sf::Clock elapsedClock;
 	float deltaTime;
 	Ball ball;
 

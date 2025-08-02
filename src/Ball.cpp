@@ -5,6 +5,8 @@ Ball::Ball(float radius, sf::Vector2f position, sf::Color color, sf::Vector2f ve
 	shape.setRadius(radius);
 	shape.setPosition(position);
 	shape.setFillColor(color);
+	shape.setOutlineColor(sf::Color::Red);
+	shape.setOutlineThickness(2.f);
 
 	shape.setOrigin(radius, radius);
 	
