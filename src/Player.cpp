@@ -1,0 +1,55 @@
+#include "Player.h"
+
+Player::Player(const std::string& textureFile, sf::Vector2f position, float speed):speed(speed)
+{
+	if (!texture.loadFromFile(textureFile))
+	{
+		texture.create(32, 32);
+		sf::Image image;
+		image.create(32, 32, sf::Color::Red);
+		texture.loadFromImage(image);
+	}
+
+	sprite.setTexture(texture);
+	sprite.setPosition(position);
+
+	sprite.setOrigin(16.f, 16.f);
+}
+
+void Player::Update(float dt, unsigned int windowWidth, unsigned int windowHeight)
+{
+	sf::Vector2f movement(0.f, 0.f);
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+		movement.y -= speed * dt;
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+		movement.y += speed * dt;
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+		movement.x -= speed * dt;
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+		movement.x += speed * dt;
+	}
+	sprite.move(movement);
+
+	sf::Vector2f pos = sprite.getPosition();
+	sf::FloatRect bounds = sprite.getGlobalBounds();
+
+	if (pos.x - bounds.width / 2 < 0.f)pos.x = bounds.width / 2;
+	if (pos.x + bounds.width / 2 > windowWidth)pos.x = windowWidth - bounds.width / 2;
+	if (pos.y - bounds.height / 2 < 0.f)pos.y = bounds.height / 2;
+	if (pos.y + bounds.height / 2 < windowHeight)pos.y = windowHeight -bounds.height / 2;
+	sprite.setPosition(pos);
+
+}
+
+void Player::Draw(sf::RenderWindow& window) const
+{
+	window.draw(sprite);
+}
+
+sf::FloatRect Player::getBounds() const
+{
+	return sprite.getGlobalBounds();
+}

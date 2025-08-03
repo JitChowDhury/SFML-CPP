@@ -1,7 +1,8 @@
 #pragma once 
-
+#include<vector>
 #include<SFML\Graphics.hpp>
 #include "Ball.h"
+#include "Player.h"
 
 class Game
 {
@@ -10,8 +11,11 @@ private:
 	sf::Clock deltaClock;   
 	sf::Clock elapsedClock;
 	float deltaTime;
-	Ball ball1;
-	Ball ball2;
+	Player player;
+	std::vector<Ball> balls;
+	sf::Font font;
+	sf::Text scoreText;
+	int score;
 
 
 

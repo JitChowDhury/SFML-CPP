@@ -12,7 +12,7 @@ Ball::Ball(float radius, sf::Vector2f position, sf::Color color, sf::Vector2f ve
 	
 }
 
-void Ball::Update(float deltaTime, int windowWidth, int windowHeight)
+void Ball::Update(float deltaTime, unsigned int windowWidth, unsigned int windowHeight)
 {
 	shape.move(velocity * deltaTime);
 
@@ -44,4 +44,8 @@ void Ball::Draw(sf::RenderWindow& window) const
 sf::Vector2f Ball::getPosition() const
 {
 	return shape.getPosition();
+}
+
+sf::FloatRect Ball::getBounds() const {
+	return shape.getGlobalBounds();
 }
