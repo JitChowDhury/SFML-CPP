@@ -15,6 +15,7 @@ private:
 	std::vector<Ball> balls;
 	sf::Font font;
 	sf::Text scoreText;
+	sf::Text fpsText;
 	int score;
 
 

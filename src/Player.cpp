@@ -12,6 +12,7 @@ Player::Player(const std::string& textureFile, sf::Vector2f position, float spee
 
 	sprite.setTexture(texture);
 	sprite.setPosition(position);
+	sprite.setScale(3, 3);
 
 	sprite.setOrigin(16.f, 16.f);
 }
@@ -39,7 +40,7 @@ void Player::Update(float dt, unsigned int windowWidth, unsigned int windowHeigh
 	if (pos.x - bounds.width / 2 < 0.f)pos.x = bounds.width / 2;
 	if (pos.x + bounds.width / 2 > windowWidth)pos.x = windowWidth - bounds.width / 2;
 	if (pos.y - bounds.height / 2 < 0.f)pos.y = bounds.height / 2;
-	if (pos.y + bounds.height / 2 < windowHeight)pos.y = windowHeight -bounds.height / 2;
+	if (pos.y + bounds.height / 2 > windowHeight)pos.y = windowHeight -bounds.height / 2;
 	sprite.setPosition(pos);
 
 }

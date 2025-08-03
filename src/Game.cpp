@@ -18,6 +18,12 @@ player("assets/player.png", sf::Vector2f(400.f, 500.f), 200.f),score(0)
 	scoreText.setFillColor(sf::Color::White);
 	scoreText.setPosition(10.f, 10.f);
 	scoreText.setString("Score: 0");
+
+	fpsText.setFont(font);
+	fpsText.setCharacterSize(24);
+	fpsText.setFillColor(sf::Color::Green);
+	fpsText.setPosition(140.f, 10.f);
+	fpsText.setString("FPS: 0");
 }
 
 void Game::HandleEvents()
@@ -64,7 +70,9 @@ void Game::Update()
 
 	if (elapsed.asSeconds() >= 1.0f)
 	{
-	std::cout << "FPS: " << 1 / deltaTime << std::endl;
+		std::stringstream fpss;
+		fpss << "FPS: " << (int) (1 / deltaTime);
+		fpsText.setString(fpss.str());
 	elapsedClock.restart();
 
 	}
@@ -79,6 +87,7 @@ void Game::Render()
 		ball.Draw(window);
 	}
 	window.draw(scoreText);
+	window.draw(fpsText);
 	window.display();
 }
 
