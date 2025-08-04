@@ -44,7 +44,7 @@ void Game::HandleEvents()
 
 void Game::Update()
 {
-	deltaTime = deltaClock.restart().asSeconds();
+	deltaTime = deltaClock.restart().asSeconds();//returns the time took to render last frame as seconds
 	player.Update(deltaTime, window.getSize().x, window.getSize().y);
 	for (auto it = balls.begin(); it != balls.end();)
 	{
@@ -73,7 +73,7 @@ void Game::Update()
 		std::stringstream fpss;
 		fpss << "FPS: " << (int) (1 / deltaTime);
 		fpsText.setString(fpss.str());
-	elapsedClock.restart();
+	    elapsedClock.restart();
 
 	}
 
