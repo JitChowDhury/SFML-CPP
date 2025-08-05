@@ -22,7 +22,9 @@ private:
 	sf::Font font;
 	sf::Text scoreText;
 	sf::Text fpsText;
+	sf::Text stateText;
 	int score;
+
 
 
 

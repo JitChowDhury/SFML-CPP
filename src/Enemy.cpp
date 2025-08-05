@@ -23,7 +23,7 @@ void Enemy::update(float dt, unsigned int windowWidth, unsigned int windowHeight
 	if (pos.x - bounds.width / 2 <= 0.f || pos.x + bounds.width / 2 >= windowWidth)
 	{
 		velocity.x = -velocity.x;
-		if (pos.x - bounds.width / 2 <= 0f) pos.x = bounds.width / 2;
+		if (pos.x - bounds.width / 2 <= 0.f) pos.x = bounds.width / 2;
 		else pos.x = windowWidth - bounds.width / 2;
 		sprite.setPosition(pos);
 
@@ -42,7 +42,7 @@ sf::FloatRect Enemy::getBounds() const
 
 float Enemy::getRadius() const
 {
-	return sprite.getGlobalBounds()/2.f;
+	return sprite.getGlobalBounds().width/2.f;
 }
 
 void Enemy::handleInput(const sf::Event& event)
