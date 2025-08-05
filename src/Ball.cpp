@@ -12,7 +12,7 @@ Ball::Ball(float radius, sf::Vector2f position, sf::Color color, sf::Vector2f ve
 	
 }
 
-void Ball::Update(float deltaTime, unsigned int windowWidth, unsigned int windowHeight)
+void Ball::update(float deltaTime, unsigned int windowWidth, unsigned int windowHeight)
 {
 	shape.move(velocity * deltaTime);
 
@@ -36,7 +36,7 @@ void Ball::Update(float deltaTime, unsigned int windowWidth, unsigned int window
 	}
 }
 
-void Ball::Draw(sf::RenderWindow& window) const
+void Ball::draw(sf::RenderWindow& window) const
 {
 	window.draw(shape);
 }
@@ -48,4 +48,13 @@ sf::Vector2f Ball::getPosition() const
 
 sf::FloatRect Ball::getBounds() const {
 	return shape.getGlobalBounds();
+}
+
+float Ball::getRadius() const
+{
+	return shape.getRadius();
+}
+
+void Ball::handleInput(const sf::Event& event)
+{
 }

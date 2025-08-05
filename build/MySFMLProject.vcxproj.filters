@@ -16,6 +16,9 @@
     <ClCompile Include="E:\CODE\C++\SFML\LearnSFML\src\Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="E:\CODE\C++\SFML\LearnSFML\src\Enemy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="E:\CODE\C++\SFML\LearnSFML\include\Game.h">
@@ -28,6 +31,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="E:\CODE\C++\SFML\LearnSFML\include\Player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\CODE\C++\SFML\LearnSFML\include\Enemy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

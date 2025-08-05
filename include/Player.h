@@ -8,10 +8,13 @@ private:
 	sf::Sprite sprite;
 	sf::Texture texture;
 	float speed; //pixels per second
+	bool isRed;
 
 public:
 	Player(const std::string& textureFile, sf::Vector2f position, float speed);
-	void Update(float dt, unsigned int windowWidth, unsigned int windowHeight) override;
-	void Draw(sf::RenderWindow& window) const override;
+	void update(float dt, unsigned int windowWidth, unsigned int windowHeight) override;
+	void draw(sf::RenderWindow& window) const override;
 	sf::FloatRect getBounds() const override;
+	float getRadius() const override; // New
+	void handleInput(const sf::Event& event) override;
 };

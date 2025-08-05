@@ -1,14 +1,17 @@
 #include "Game.h"
 #include <iostream>
 #include <sstream>
+#include <filesystem>
 
-Game::Game():window(sf::VideoMode(1024,768),"SFML GAME"),deltaTime{0.f},
-player("assets/player.png", sf::Vector2f(400.f, 500.f), 200.f),score(0)
+Game::Game():window(sf::VideoMode(1024,768),"SFML GAME"),
+deltaTime{0.f},
+player("assets/player.png", sf::Vector2f(400.f, 500.f), 200.f),
+score(0)
 {
 	window.setFramerateLimit(120);
 	balls.emplace_back(25.f, sf::Vector2f(400.f, 300.f), sf::Color::Green, sf::Vector2f(400.f, 150.f));
 	balls.emplace_back(30.f, sf::Vector2f(900.f, 150.f), sf::Color::White, sf::Vector2f(1000.f, 750.f));
-	
+	std::cout << "Working Directory: " << std::filesystem::current_path() << std::endl;
 	if (!font.loadFromFile("assets/arial.ttf"))
 	{
 
@@ -39,16 +42,17 @@ void Game::HandleEvents()
 		{
 			window.close();
 		}
+	player.handleInput(event);
 	}
 }
 
 void Game::Update()
 {
 	deltaTime = deltaClock.restart().asSeconds();//returns the time took to render last frame as seconds
-	player.Update(deltaTime, window.getSize().x, window.getSize().y);
+	player.update(deltaTime, window.getSize().x, window.getSize().y);
 	for (auto it = balls.begin(); it != balls.end();)
 	{
-		it->Update(deltaTime, window.getSize().x, window.getSize().y);
+		it->update(deltaTime, window.getSize().x, window.getSize().y);
 		if (player.getBounds().intersects(it->getBounds()))
 		{
 			score++;
@@ -82,9 +86,9 @@ void Game::Update()
 void Game::Render()
 {
 	window.clear();
-	player.Draw(window);
+	player.draw(window);
 	for (const auto& ball : balls) {
-		ball.Draw(window);
+		ball.draw(window);
 	}
 	window.draw(scoreText);
 	window.draw(fpsText);

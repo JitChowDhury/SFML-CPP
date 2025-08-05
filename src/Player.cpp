@@ -1,6 +1,6 @@
 #include "Player.h"
 
-Player::Player(const std::string& textureFile, sf::Vector2f position, float speed):speed(speed)
+Player::Player(const std::string& textureFile, sf::Vector2f position, float speed):speed(speed),isRed(true)
 {
 	if (!texture.loadFromFile(textureFile))
 	{
@@ -17,7 +17,7 @@ Player::Player(const std::string& textureFile, sf::Vector2f position, float spee
 	sprite.setOrigin(16.f, 16.f);
 }
 
-void Player::Update(float dt, unsigned int windowWidth, unsigned int windowHeight)
+void Player::update(float dt, unsigned int windowWidth, unsigned int windowHeight)
 {
 	sf::Vector2f movement(0.f, 0.f);
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
@@ -45,7 +45,7 @@ void Player::Update(float dt, unsigned int windowWidth, unsigned int windowHeigh
 
 }
 
-void Player::Draw(sf::RenderWindow& window) const
+void Player::draw(sf::RenderWindow& window) const
 {
 	window.draw(sprite);
 }
@@ -53,4 +53,19 @@ void Player::Draw(sf::RenderWindow& window) const
 sf::FloatRect Player::getBounds() const
 {
 	return sprite.getGlobalBounds();
+}
+
+float Player::getRadius() const
+{
+	return sprite.getGlobalBounds().width / 2.f;
+}
+
+void Player::handleInput(const sf::Event& event) {
+	if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Space) {
+		isRed = !isRed;
+		sf::Image image;
+		image.create(32, 32, isRed ? sf::Color::Red : sf::Color::Blue);
+		texture.loadFromImage(image);
+		sprite.setTexture(texture);
+	}
 }
