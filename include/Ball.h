@@ -16,6 +16,8 @@ public:
 	sf::FloatRect getBounds() const override;
 	float getRadius() const override;
 	void handleInput(const sf::Event& event)override;
+	float getHealth() const override;
+	void takeDamage(float damage) override;
 			
 
 };

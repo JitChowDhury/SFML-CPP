@@ -58,3 +58,9 @@ float Ball::getRadius() const
 void Ball::handleInput(const sf::Event& event)
 {
 }
+
+float Ball::getHealth() const {
+	return 0.f;
+}
+
+void Ball::takeDamage(float damage) {}

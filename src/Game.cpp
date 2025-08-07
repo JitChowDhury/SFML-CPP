@@ -2,22 +2,22 @@
 #include <iostream>
 #include <sstream>
 #include <cmath>
+#include <filesystem>
 
 
 Game::Game():window(sf::VideoMode(1024,768),"SFML GAME"),
 deltaTime{0.f},
-player("assets/player.png", sf::Vector2f(400.f, 500.f), 200.f),
 score(0),
 state(GameState::PLAY)
 {
 	window.setFramerateLimit(120);
-
-	//initialize balls
-	balls.emplace_back(25.f, sf::Vector2f(400.f, 300.f), sf::Color::Green, sf::Vector2f(400.f, 150.f));
-	balls.emplace_back(30.f, sf::Vector2f(900.f, 150.f), sf::Color::White, sf::Vector2f(1000.f, 750.f));
-
-	//intialize enemies
-	enemies.emplace_back("assets/enemy.png",sf::Vector2f(100.f, 100.f), sf::Vector2f(100.f, 0.f));
+	std::cout << "Working Directory: " << std::filesystem::current_path() << std::endl;
+	// Initialize objects
+	player = new Player("assets/player.png", sf::Vector2f(400.f, 300.f), 200.f);
+	objects.emplace_back(player);
+	objects.emplace_back(std::make_unique<Ball>(20.f, sf::Vector2f(200.f, 200.f), sf::Color::Green, sf::Vector2f(150.f, 100.f)));
+	objects.emplace_back(std::make_unique<Ball>(20.f, sf::Vector2f(600.f, 400.f), sf::Color::Yellow, sf::Vector2f(-200.f, -150.f)));
+	objects.emplace_back(std::make_unique<Enemy>("assets/enemy.png", sf::Vector2f(100.f, 100.f), 100.f));
 
 	if (!font.loadFromFile("assets/arial.ttf"))
 	{
@@ -44,6 +44,10 @@ state(GameState::PLAY)
 	fpsText.setFillColor(sf::Color::Green);
 	fpsText.setPosition(140.f, 10.f);
 	fpsText.setString("FPS: 0");
+
+	healthBar.setSize(sf::Vector2f(100.f, 10.f));
+	healthBar.setFillColor(sf::Color::Green);
+	healthBar.setPosition(10.f, 40.f);
 
 
 
@@ -75,15 +79,10 @@ void Game::HandleEvents()
 
 		if (state == GameState::PLAY )
 		{
-			player.handleInput(event);
-				for (auto& ball : balls)
-				{
-					ball.handleInput(event);
-				}
-			    for (auto& enemy : enemies)
-			    {
-					enemy.handleInput(event);
-			    }
+			for (auto& obj : objects)
+			{
+				obj->handleInput(event);
+            }
 		}		
 
 	}
@@ -105,52 +104,53 @@ void Game::Update()
 	}
 	if (state != GameState::PLAY) return;
 
-	player.update(deltaTime, window.getSize().x, window.getSize().y);
-	for (auto& ball : balls)
+
+	sf::Vector2f playerPos = player->getPosition();
+	for (auto& obj : objects)
 	{
-		ball.update(deltaTime, window.getSize().x, window.getSize().y);
+		if (Enemy* enemy = dynamic_cast<Enemy*>(obj.get())) {
+			enemy->update(deltaTime, window.getSize().x, window.getSize().y, playerPos);
+		}
+		else {
+			obj->update(deltaTime, window.getSize().x, window.getSize().y);
+		}
 	}
 
-	for (auto& enemy : enemies)
+	for (auto it = objects.begin(); it != objects.end();)
 	{
-		enemy.update(deltaTime, window.getSize().x, window.getSize().y);
-	}
-	//circle based collision player vs balls
-	sf::Vector2f playerPos = player.getBounds().getPosition() + player.getBounds().getSize() / 2.f;
-	float playerRadius = player.getRadius();
-	for (auto it = balls.begin(); it != balls.end();)
-	{
-		sf::Vector2f ballPos = it->getBounds().getPosition() + it->getBounds().getSize() / 2.f;
-		float ballRadius = it->getRadius();
-		float dx = ballPos.x - playerPos.x;
-		float dy = ballPos.y - playerPos.y;
-		float distance = std::sqrt(dx * dx + dy * dy);
-		if (distance < ballRadius + playerRadius)
+		if (Ball* ball = dynamic_cast<Ball*>(it->get()))//if cast succeds then no null and if block executes and if null then skip
 		{
-			score++;
-			it = balls.erase(it);//returns the next location after removing it
-		}
-		else
-		{
-			++it;
-		}
+			sf::Vector2f playerPos = player->getBounds().getPosition() + player->getBounds().getSize() / 2.f;
+			sf::Vector2f ballPos = ball->getBounds().getPosition() + ball->getBounds().getSize() / 2.f;
 
-	}
-	for (const auto& enemy : enemies) {
-		sf::Vector2f enemyPos = enemy.getBounds().getPosition() + enemy.getBounds().getSize() / 2.f;
-		float enemyRadius = enemy.getRadius();
-		float dx = enemyPos.x - playerPos.x;
-		float dy = enemyPos.y - playerPos.y;
-		float distance = std::sqrt(dx * dx + dy * dy);
-		if (distance < playerRadius + enemyRadius) {
-			state = GameState::GAME_OVER;
+			float distance = std::sqrt(std::pow(ballPos.x - playerPos.x, 2) + std::pow(ballPos.y - playerPos.y, 2));
+			if (distance < player->getRadius() + ball->getRadius()) {
+				score++;
+				it = objects.erase(it);
+				continue;
+			}
 		}
+		else if (Enemy* enemy = dynamic_cast<Enemy*>(it->get())) {
+			sf::Vector2f playerPos = player->getBounds().getPosition() + player->getBounds().getSize() / 2.f;
+			sf::Vector2f enemyPos = enemy->getBounds().getPosition() + enemy->getBounds().getSize() / 2.f;
+			float distance = std::sqrt(std::pow(enemyPos.x - playerPos.x, 2) + std::pow(enemyPos.y - playerPos.y, 2));
+			if (distance < player->getRadius() + enemy->getRadius()) {
+				player->takeDamage(10.f);
+				if (player->getHealth() <= 0.f) {
+					state = GameState::GAME_OVER;
+				}
+			}
+		}
+		++it;
 	}
+
+	
 
     //update score text
 	std::stringstream ss;
 	ss << "Score: " << score;
 	scoreText.setString(ss.str());
+
 	sf::Time elapsed = elapsedClock.getElapsedTime();
 
 
@@ -164,21 +164,29 @@ void Game::Update()
 
 	}
 
+	healthBar.setSize(sf::Vector2f(player->getHealth(), 10.f));
+	if (player->getHealth() > 50.f) {
+		healthBar.setFillColor(sf::Color::Green);
+	}
+	else if (player->getHealth() > 20.f) {
+		healthBar.setFillColor(sf::Color::Yellow);
+	}
+	else {
+		healthBar.setFillColor(sf::Color::Red);
+	}
+
 }
 
 void Game::Render()
 {
 	window.clear(sf::Color::Black);
-	player.draw(window);
-	for (const auto& ball : balls) {
-		ball.draw(window);
-	}
-	for (const auto& enemy : enemies) {
-		enemy.draw(window);
+	for (const auto& obj : objects) {
+		obj->draw(window);
 	}
 	window.draw(scoreText);
 	window.draw(fpsText);
 	window.draw(stateText);
+	window.draw(healthBar);
 	window.display();
 }
 

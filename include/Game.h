@@ -16,13 +16,13 @@ private:
 	sf::Clock elapsedClock;
 	GameState state;
 	float deltaTime;
-	Player player;
-	std::vector<Ball> balls;
-	std::vector<Enemy> enemies;
+	std::vector<std::unique_ptr<GameObject>> objects;
+	Player* player;
 	sf::Font font;
 	sf::Text scoreText;
 	sf::Text fpsText;
 	sf::Text stateText;
+	sf::RectangleShape healthBar;
 	int score;
 
 
