@@ -110,6 +110,7 @@ void Game::Update()
 	{
 		if (Enemy* enemy = dynamic_cast<Enemy*>(obj.get())) {
 			enemy->update(deltaTime, window.getSize().x, window.getSize().y, playerPos);
+			enemy->update(deltaTime, window.getSize().x, window.getSize().y);
 		}
 		else {
 			obj->update(deltaTime, window.getSize().x, window.getSize().y);
