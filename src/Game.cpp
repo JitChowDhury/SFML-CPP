@@ -75,6 +75,17 @@ void Game::HandleEvents()
 			{
 				state = (state == GameState::PLAY) ? GameState::PAUSE : GameState::PLAY;
 			}
+			if (event.key.code == sf::Keyboard::R && state == GameState::GAME_OVER)
+			{
+				score = 0;
+				state = GameState::PLAY;
+				objects.clear();
+				player = new Player("assets/player.png", sf::Vector2f(400.f, 300.f), 200.f);
+				objects.emplace_back(player);
+				objects.emplace_back(std::make_unique<Ball>(20.f, sf::Vector2f(200.f, 200.f), sf::Color::Green, sf::Vector2f(150.f, 100.f)));
+				objects.emplace_back(std::make_unique<Ball>(20.f, sf::Vector2f(600.f, 400.f), sf::Color::Yellow, sf::Vector2f(-200.f, -150.f)));
+				objects.emplace_back(std::make_unique<Enemy>("assets/enemy.png", sf::Vector2f(100.f, 100.f), 100.f));
+			}
 		}
 
 		if (state == GameState::PLAY )
@@ -136,7 +147,7 @@ void Game::Update()
 			sf::Vector2f enemyPos = enemy->getBounds().getPosition() + enemy->getBounds().getSize() / 2.f;
 			float distance = std::sqrt(std::pow(enemyPos.x - playerPos.x, 2) + std::pow(enemyPos.y - playerPos.y, 2));
 			if (distance < player->getRadius() + enemy->getRadius()) {
-				player->takeDamage(10.f);
+				player->takeDamage(1.f);
 				if (player->getHealth() <= 0.f) {
 					state = GameState::GAME_OVER;
 				}

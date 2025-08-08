@@ -57,6 +57,14 @@ float Ball::getRadius() const
 
 void Ball::handleInput(const sf::Event& event)
 {
+	if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left)
+	{
+		sf::Vector2f mousePos = sf::Vector2f(event.mouseButton.x, event.mouseButton.y);
+		if (getBounds().contains(mousePos))
+		{
+			shape.setFillColor(shape.getFillColor() == sf::Color::Green ? sf::Color::Yellow:sf::Color::Green);
+		}
+	}
 }
 
 float Ball::getHealth() const {

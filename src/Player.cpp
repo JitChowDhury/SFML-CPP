@@ -4,7 +4,7 @@ Player::Player(const std::string& textureFile, sf::Vector2f position, float spee
 	speed(speed),
 	isRed(true),
 	health(100.f),
-	animation(0.1f)
+	animation(0.05f)
 {
 	if (!texture.loadFromFile(textureFile))
 	{
