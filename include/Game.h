@@ -5,6 +5,7 @@
 #include "Ball.h"
 #include "Player.h"
 #include "Enemy.h"
+#include "PowerUp.h"
 
 enum class GameState {PLAY, PAUSE , GAME_OVER};
 

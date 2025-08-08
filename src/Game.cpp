@@ -5,6 +5,7 @@
 #include <filesystem>
 
 
+
 Game::Game():window(sf::VideoMode(1024,768),"SFML GAME"),
 deltaTime{0.f},
 score(0),
@@ -15,6 +16,7 @@ state(GameState::PLAY)
 	// Initialize objects
 	player = new Player("assets/player.png", sf::Vector2f(400.f, 300.f), 200.f);
 	objects.emplace_back(player);
+	objects.emplace_back(std::make_unique<PowerUp>("assets/powerup.png", sf::Vector2f(300.f, 300.f)));
 	objects.emplace_back(std::make_unique<Ball>(20.f, sf::Vector2f(200.f, 200.f), sf::Color::Green, sf::Vector2f(150.f, 100.f)));
 	objects.emplace_back(std::make_unique<Ball>(20.f, sf::Vector2f(600.f, 400.f), sf::Color::Yellow, sf::Vector2f(-200.f, -150.f)));
 	objects.emplace_back(std::make_unique<Enemy>("assets/enemy.png", sf::Vector2f(100.f, 100.f), 100.f));
@@ -82,6 +84,7 @@ void Game::HandleEvents()
 				objects.clear();
 				player = new Player("assets/player.png", sf::Vector2f(400.f, 300.f), 200.f);
 				objects.emplace_back(player);
+				objects.emplace_back(std::make_unique<PowerUp>("assets/powerup.png", sf::Vector2f(600.f, 300.f)));
 				objects.emplace_back(std::make_unique<Ball>(20.f, sf::Vector2f(200.f, 200.f), sf::Color::Green, sf::Vector2f(150.f, 100.f)));
 				objects.emplace_back(std::make_unique<Ball>(20.f, sf::Vector2f(600.f, 400.f), sf::Color::Yellow, sf::Vector2f(-200.f, -150.f)));
 				objects.emplace_back(std::make_unique<Enemy>("assets/enemy.png", sf::Vector2f(100.f, 100.f), 100.f));
@@ -152,6 +155,21 @@ void Game::Update()
 					state = GameState::GAME_OVER;
 				}
 			}
+		}
+		else if (PowerUp* powerup = dynamic_cast<PowerUp*>(it->get()))
+		{
+			sf::Vector2f playerPos = player->getBounds().getPosition() + player->getBounds().getSize() / 2.f;
+			sf::Vector2f powerUpPos = powerup->getBounds().getPosition() + powerup->getBounds().getSize() / 2.f;
+
+			float distance = std::sqrt(std::pow(powerUpPos.x - playerPos.x, 2) + std::pow(powerUpPos.y - playerPos.y, 2));
+
+			if (distance < player->getRadius() + powerup->getRadius())
+			{
+				player->takeDamage(-20.f);
+				it = objects.erase(it);
+				continue;
+			}
+
 		}
 		++it;
 	}
