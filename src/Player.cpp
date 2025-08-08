@@ -46,6 +46,8 @@ void Player::update(float dt, unsigned int windowWidth, unsigned int windowHeigh
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
 		movement.x += speed * dt;
 	}
+
+	movement.x > 0 ? sprite.setScale(3, 3) : sprite.setScale(-3, 3);
 	sprite.move(movement);
 
 	sf::Vector2f pos = sprite.getPosition();
