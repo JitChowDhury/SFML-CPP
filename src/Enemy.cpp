@@ -36,6 +36,8 @@ void Enemy::update(float dt, unsigned int windowWidth, unsigned int windowHeight
 
 
 	sf::Vector2f direction = playerPos - sprite.getPosition();
+
+	direction.x > 0 ? sprite.setScale(1, 1) : sprite.setScale(-1, 1);
 	float length = std::sqrt(direction.x * direction.x + direction.y * direction.y);
 	if (length > 0.f) {
 		direction /= length; // Normalize

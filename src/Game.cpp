@@ -21,7 +21,7 @@ state(GameState::PLAY)
 	objects.emplace_back(std::make_unique<Ball>(20.f, sf::Vector2f(600.f, 400.f), sf::Color::Yellow, sf::Vector2f(-200.f, -150.f)));
 	objects.emplace_back(std::make_unique<Enemy>("assets/enemy.png", sf::Vector2f(100.f, 100.f), 100.f));
 
-	if (!font.loadFromFile("assets/arial.ttf"))
+	if (!font.loadFromFile("assets/Planes_ValMore.ttf"))
 	{
 		std::cerr << "Error: Failed to load font assets/arial.ttf" << std::endl;
 	}
