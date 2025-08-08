@@ -9,7 +9,9 @@
 Game::Game():window(sf::VideoMode(1024,768),"SFML GAME"),
 deltaTime{0.f},
 score(0),
-state(GameState::PLAY)
+state(GameState::PLAY),
+ballSpawnInterval(2.0f),
+ballSpawnTimer(0.f)
 {
 	window.setFramerateLimit(120);
 	std::cout << "Working Directory: " << std::filesystem::current_path() << std::endl;
@@ -105,7 +107,12 @@ void Game::HandleEvents()
 void Game::Update()
 {
 	deltaTime = deltaClock.restart().asSeconds();//returns the time took to render last frame as seconds
-
+	ballSpawnTimer += deltaTime;
+	if (ballSpawnTimer >= ballSpawnInterval)
+	{
+		ballSpawnTimer -= ballSpawnInterval;
+		objects.emplace_back(std::make_unique<Ball>(20.f, sf::Vector2f(rand() % window.getSize().x, rand() % window.getSize().y), sf::Color::Green, sf::Vector2f(rand() % 200 - 100, rand() % 200 - 100)));
+	}
 	//update state text
 	if (state == GameState::PAUSE) {
 		stateText.setString("Paused");

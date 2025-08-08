@@ -17,6 +17,8 @@ private:
 	sf::Clock elapsedClock;
 	GameState state;
 	float deltaTime;
+	float ballSpawnTimer;
+	float ballSpawnInterval;
 	std::vector<std::unique_ptr<GameObject>> objects;
 	Player* player;
 	sf::Font font;
