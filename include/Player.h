@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include "GameObject.h"
 #include "Animation.h"
 
@@ -12,6 +13,9 @@ private:
 	float speed; //pixels per second
 	bool isRed;
 	float health;
+
+	sf::SoundBuffer hitBuffer;
+	sf::Sound hitSound;
 
 public:
 	Player(const std::string& textureFile, sf::Vector2f position, float speed);

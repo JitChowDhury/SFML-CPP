@@ -2,7 +2,7 @@
 #include <random>
 
 //constructor initialization list
-ParticleSystem::ParticleSystem(sf::Color color, float particleSize, float maxLifeTime) :color(color), particleSize(particleSize), maxLifeTime(maxLifeTime)
+ParticleSystem::ParticleSystem(sf::Color color, float particleSize, float maxLifeTime) :color(color), particleSize(particleSize), maxLifetime(maxLifeTime)
 {
 
 }
@@ -16,12 +16,12 @@ void ParticleSystem::addParticle(const sf::Vector2f position, const sf::Vector2f
 void ParticleSystem::update(float dt)
 {
 	//loops throug each particle in the vector and its lifetime decreases , if its 0 or less that it's removed and if it more than 0 then change its position
-	for (auto it = particles.begin(); it != particles.end())
+	for (auto it = particles.begin(); it != particles.end();)
 	{
 		it->lifetime -= dt;
 		if (it->lifetime <= 0.f)
 		{
-			it = particles.erase();
+			it = particles.erase(it);
 		}
 		else
 		{

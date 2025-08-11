@@ -26,7 +26,14 @@ Player::Player(const std::string& textureFile, sf::Vector2f position, float spee
 	animation.addFrame(sf::IntRect(128, 0, 32, 32));
 	animation.addFrame(sf::IntRect(160, 0, 32, 32));
 
+	if (!hitBuffer.loadFromFile("assets/hit.wav"))
+	{
+
+	}
+	hitSound.setBuffer(hitBuffer);
+
 }
+
 
 void Player::update(float dt, unsigned int windowWidth, unsigned int windowHeight)
 {
@@ -94,6 +101,7 @@ float Player::getHealth() const
 void Player::takeDamage(float damage)
 {
 	health = std::max(0.f, health - damage);
+	if (damage > 0.f)hitSound.play();//play sound on damage
 }
 
 sf::Vector2f Player::getPosition() const {
