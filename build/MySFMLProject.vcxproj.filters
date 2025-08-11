@@ -25,6 +25,9 @@
     <ClCompile Include="E:\CODE\C++\SFML\LearnSFML\src\PowerUp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="E:\CODE\C++\SFML\LearnSFML\src\ParticleSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="E:\CODE\C++\SFML\LearnSFML\include\Game.h">
@@ -46,6 +49,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="E:\CODE\C++\SFML\LearnSFML\include\PowerUp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\CODE\C++\SFML\LearnSFML\include\ParticleSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
