@@ -11,13 +11,13 @@ void Animation::addFrame(const sf::IntRect& frame)
 
 void Animation::update(float dt)
 {
-	currentTime += dt;
-	if (currentTime>=frameTime)
+	currentTime += dt;//add deltatime
+	if (currentTime>=frameTime)//if currenttime is greates than the suggestedframetime
 	{
 		currentTime -= frameTime;
-		currentFrame = (currentFrame + 1) % frames.size();
+		currentFrame = (currentFrame + 1) % frames.size();//currentframe next 
 	}
 }
 const sf::IntRect& Animation::getCurrentFrame() const {
-	return frames[currentFrame];
+	return frames[currentFrame];//return floatrect of currentframe
 }

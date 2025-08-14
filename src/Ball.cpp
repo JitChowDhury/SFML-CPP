@@ -20,6 +20,7 @@ void Ball::update(float deltaTime, unsigned int windowWidth, unsigned int window
 	sf::Vector2f pos = shape.getPosition();
 	float radius = shape.getRadius();
 
+	//bounce back if collide with bounder
 	if (pos.x - radius <= 0.f || pos.x + radius >= windowWidth)
 	{
 		velocity.x = -velocity.x * 0.8f;
@@ -60,6 +61,7 @@ void Ball::handleInput(const sf::Event& event)
 {
 	if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left)
 	{
+		//get mouseposstored in event object
 		sf::Vector2f mousePos = sf::Vector2f(event.mouseButton.x, event.mouseButton.y);
 		if (getBounds().contains(mousePos))
 		{

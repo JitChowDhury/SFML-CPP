@@ -34,11 +34,11 @@ void Enemy::update(float dt, unsigned int windowWidth, unsigned int windowHeight
 	animation.update(dt);
 	sprite.setTextureRect(animation.getCurrentFrame());
 
-
+	//direction to player
 	sf::Vector2f direction = playerPos - sprite.getPosition();
 
-	direction.x > 0 ? sprite.setScale(1, 1) : sprite.setScale(-1, 1);
-	float length = std::sqrt(direction.x * direction.x + direction.y * direction.y);
+	direction.x > 0 ? sprite.setScale(1, 1) : sprite.setScale(-1, 1);//face based on direction
+	float length = std::sqrt(direction.x * direction.x + direction.y * direction.y);//length
 	if (length > 0.f) {
 		direction /= length; // Normalize
 		sprite.move(direction * speed * dt);

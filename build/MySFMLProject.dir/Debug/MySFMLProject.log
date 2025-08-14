@@ -1,2 +1,9 @@
-﻿  Game.cpp
+﻿  Animation.cpp
+  Ball.cpp
+  Enemy.cpp
+  Game.cpp
+  Player.cpp
+  PowerUp.cpp
+  main.cpp
+  Generating Code...
   MySFMLProject.vcxproj -> E:\CODE\C++\SFML\LearnSFML\build\Debug\MySFMLProject.exe
