@@ -14,6 +14,7 @@ Ball::Ball(float radius, sf::Vector2f position, sf::Color color, sf::Vector2f ve
 
 void Ball::update(float deltaTime, unsigned int windowWidth, unsigned int windowHeight)
 {
+	velocity.y += 500.f * deltaTime;//gravity
 	shape.move(velocity * deltaTime);
 
 	sf::Vector2f pos = shape.getPosition();
@@ -21,7 +22,7 @@ void Ball::update(float deltaTime, unsigned int windowWidth, unsigned int window
 
 	if (pos.x - radius <= 0.f || pos.x + radius >= windowWidth)
 	{
-		velocity.x = -velocity.x;
+		velocity.x = -velocity.x * 0.8f;
 		if (pos.x - radius <= 0.f) pos.x = radius;
 		else pos.x = windowWidth - radius;
 
@@ -29,7 +30,7 @@ void Ball::update(float deltaTime, unsigned int windowWidth, unsigned int window
 	}
 
 	if (pos.y - radius <= 0.f || pos.y + radius >= windowHeight) {
-		velocity.y = -velocity.y; 
+		velocity.y = -velocity.y * 0.8f;
 		if (pos.y - radius <= 0.f) pos.y = radius;
 		else pos.y = windowHeight - radius;
 		shape.setPosition(pos);

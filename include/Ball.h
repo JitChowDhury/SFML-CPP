@@ -18,6 +18,8 @@ public:
 	void handleInput(const sf::Event& event)override;
 	float getHealth() const override;
 	void takeDamage(float damage) override;
+
+
 			
 
 };

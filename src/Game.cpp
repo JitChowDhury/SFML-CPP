@@ -3,12 +3,14 @@
 #include <sstream>
 #include <cmath>
 #include <filesystem>
+#include <random>
 
 
 
 Game::Game():window(sf::VideoMode(1024,768),"SFML GAME"),
 deltaTime{0.f},
 score(0),
+particleSystem(sf::Color::Blue,2.f,0.5f),
 state(GameState::PLAY),
 ballSpawnInterval(2.0f),
 ballSpawnTimer(0.f)
@@ -53,8 +55,8 @@ ballSpawnTimer(0.f)
 	healthBar.setFillColor(sf::Color::Green);
 	healthBar.setPosition(10.f, 40.f);
 
-
-
+	if (!collectBuffer.loadFromFile("assets/collect.wav")) {}
+	collectSound.setBuffer(collectBuffer);
 
 	
 
@@ -148,6 +150,14 @@ void Game::Update()
 			float distance = std::sqrt(std::pow(ballPos.x - playerPos.x, 2) + std::pow(ballPos.y - playerPos.y, 2));
 			if (distance < player->getRadius() + ball->getRadius()) {
 				score++;
+				collectSound.play();
+
+				std::random_device rd;
+				std::mt19937 gen(rd());
+				std::uniform_real_distribution<float> dist(-100.f, 100.f);
+				for (int i = 0; i < 10; ++i) {
+					particleSystem.addParticle(ballPos, sf::Vector2f(dist(gen), dist(gen)));
+				}
 				it = objects.erase(it);
 				continue;
 			}
@@ -220,6 +230,7 @@ void Game::Render()
 	for (const auto& obj : objects) {
 		obj->draw(window);
 	}
+	particleSystem.draw(window);
 	window.draw(scoreText);
 	window.draw(fpsText);
 	window.draw(stateText);

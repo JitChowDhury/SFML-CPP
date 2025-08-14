@@ -6,6 +6,7 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "PowerUp.h"
+#include "ParticleSystem.h"
 
 enum class GameState {PLAY, PAUSE , GAME_OVER};
 
@@ -27,6 +28,11 @@ private:
 	sf::Text stateText;
 	sf::RectangleShape healthBar;
 	int score;
+
+	sf::SoundBuffer collectBuffer;
+	sf::Sound collectSound;
+	ParticleSystem particleSystem;
+	
 
 
 
