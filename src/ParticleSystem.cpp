@@ -46,3 +46,8 @@ void ParticleSystem::draw(sf::RenderWindow& window) const
 	
 
 }
+
+void ParticleSystem::clearParticle()
+{
+	particles.clear();
+}

@@ -7,13 +7,17 @@
 
 
 
-Game::Game():window(sf::VideoMode(1024,768),"SFML GAME"),
-deltaTime{0.f},
+Game::Game() :window(sf::VideoMode(1024, 768), "SFML GAME"),
+deltaTime{ 0.f },
 score(0),
-particleSystem(sf::Color::Blue,2.f,0.5f),
-state(GameState::PLAY),
+particleSystem(sf::Color::Blue, 2.f, 0.5f),
+state(GameState::START),
 ballSpawnInterval(2.0f),
-ballSpawnTimer(0.f)
+ballSpawnTimer(0.f),
+level(1),
+levelTimer(0.f),
+multiplier(1.f),
+multiplierTimer(0.f)
 {
 	window.setFramerateLimit(120);
 	std::cout << "Working Directory: " << std::filesystem::current_path() << std::endl;
@@ -51,6 +55,22 @@ ballSpawnTimer(0.f)
 	fpsText.setPosition(140.f, 10.f);
 	fpsText.setString("FPS: 0");
 
+	startText.setFont(font);
+	startText.setCharacterSize(32);
+	startText.setString("Click to Start"); 
+	startText.setPosition(300.f, 300.f); 
+	pauseText.setFont(font);
+	pauseText.setCharacterSize(32);
+	pauseText.setFillColor(sf::Color::White);
+	pauseText.setString("Resume"); 
+	pauseText.setPosition(300.f, 300.f); 
+	restartText.setFont(font);
+	restartText.setCharacterSize(32);
+	restartText.setString("Restart");
+	restartText.setPosition(300.f, 300.f);
+	restartText.setFillColor(sf::Color::Red);
+
+
 	healthBar.setSize(sf::Vector2f(100.f, 10.f));
 	healthBar.setFillColor(sf::Color::Green);
 	healthBar.setPosition(10.f, 40.f);
@@ -81,11 +101,29 @@ void Game::HandleEvents()
 			{
 				state = (state == GameState::PLAY) ? GameState::PAUSE : GameState::PLAY;
 			}
-			if (event.key.code == sf::Keyboard::R && state == GameState::GAME_OVER)
+
+		}
+
+		if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left)
+		{
+			sf::Vector2f mousePos(event.mouseButton.x, event.mouseButton.y);
+			if (state == GameState::START && startText.getGlobalBounds().contains(mousePos))
+			{
+				state = GameState::PLAY;
+			}
+
+			if (state == GameState::PAUSE && pauseText.getGlobalBounds().contains(mousePos))
+			{
+				state = GameState::PLAY;
+			}
+			if (restartText.getGlobalBounds().contains(mousePos) && state == GameState::GAME_OVER)
 			{
 				score = 0;
+				level = 1;
+				multiplier = 1.f;
 				state = GameState::PLAY;
 				objects.clear();
+				particleSystem.clearParticle();
 				player = new Player("assets/player.png", sf::Vector2f(400.f, 300.f), 200.f);
 				objects.emplace_back(player);
 				objects.emplace_back(std::make_unique<PowerUp>("assets/powerup.png", sf::Vector2f(600.f, 300.f)));
@@ -93,7 +131,9 @@ void Game::HandleEvents()
 				objects.emplace_back(std::make_unique<Ball>(20.f, sf::Vector2f(600.f, 400.f), sf::Color::Yellow, sf::Vector2f(-200.f, -150.f)));
 				objects.emplace_back(std::make_unique<Enemy>("assets/enemy.png", sf::Vector2f(100.f, 100.f), 100.f));
 			}
-		}
+			
+			
+	}
 
 		if (state == GameState::PLAY )
 		{
@@ -109,6 +149,20 @@ void Game::HandleEvents()
 void Game::Update()
 {
 	deltaTime = deltaClock.restart().asSeconds();//returns the time took to render last frame as seconds
+	
+
+	levelTimer += deltaTime; // New
+	if (levelTimer >= 30.f) { // New
+		level++;
+		levelTimer = 0.f;
+		objects.emplace_back(std::make_unique<Enemy>("assets/enemy.png", sf::Vector2f(100.f, 100.f), 100.f + level * 20.f));
+		objects.emplace_back(std::make_unique<Ball>(20.f, sf::Vector2f(600.f, 100.f), sf::Color::Yellow, sf::Vector2f(-150.f - level * 50.f, 100.f)));
+
+	}
+
+	multiplierTimer -= deltaTime; // New
+	if (multiplierTimer <= 0.f) multiplier = 1.f; // New
+
 	ballSpawnTimer += deltaTime;
 	if (ballSpawnTimer >= ballSpawnInterval)
 	{
@@ -149,7 +203,9 @@ void Game::Update()
 
 			float distance = std::sqrt(std::pow(ballPos.x - playerPos.x, 2) + std::pow(ballPos.y - playerPos.y, 2));
 			if (distance < player->getRadius() + ball->getRadius()) {
-				score++;
+				score += static_cast<int>(1 * multiplier); // Updated with multiplier
+				multiplier += 0.5f; // New
+				multiplierTimer = 3.f; // New
 				collectSound.play();
 
 				std::random_device rd;
@@ -226,15 +282,33 @@ void Game::Update()
 
 void Game::Render()
 {
+
 	window.clear(sf::Color::Black);
-	for (const auto& obj : objects) {
-		obj->draw(window);
+	if (state == GameState::START) { // New
+		window.draw(startText);
 	}
-	particleSystem.draw(window);
-	window.draw(scoreText);
-	window.draw(fpsText);
-	window.draw(stateText);
-	window.draw(healthBar);
+	else if (state == GameState::PAUSE) { // New
+		for (const auto& obj : objects) {
+			obj->draw(window);
+		}
+		particleSystem.draw(window);
+		window.draw(scoreText);
+		window.draw(healthBar);
+		window.draw(pauseText);
+	}
+	else if (state == GameState::GAME_OVER)
+	{
+		window.draw(restartText);
+	}
+	else {
+		for (const auto& obj : objects) {
+			obj->draw(window);
+		}
+		particleSystem.draw(window);
+		window.draw(scoreText);
+		window.draw(healthBar);
+		window.draw(stateText);
+	}
 	window.display();
 }
 

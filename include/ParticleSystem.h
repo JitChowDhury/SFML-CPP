@@ -22,4 +22,5 @@ public:
 	void addParticle(const sf::Vector2f position, const sf::Vector2f& velocity);
 	void update(float dt);
 	void draw(sf::RenderWindow& window) const;
+	void clearParticle();
 };

@@ -8,7 +8,7 @@
 #include "PowerUp.h"
 #include "ParticleSystem.h"
 
-enum class GameState {PLAY, PAUSE , GAME_OVER};
+enum class GameState {PLAY, PAUSE , GAME_OVER,START};
 
 class Game
 {
@@ -28,6 +28,16 @@ private:
 	sf::Text stateText;
 	sf::RectangleShape healthBar;
 	int score;
+
+
+	int level;
+	float levelTimer,multiplier, multiplierTimer;
+	float powerUpSpawnTimer, powerUpSpawnInterval;
+
+	sf::Text startText;
+	sf::Text pauseText;
+	sf::Text restartText;
+
 
 	sf::SoundBuffer collectBuffer;
 	sf::Sound collectSound;
