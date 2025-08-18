@@ -7,3 +7,6 @@ E:\CODE\C++\SFML\LearnSFML\src\Enemy.cpp;E:\CODE\C++\SFML\LearnSFML\build\MySFML
 E:\CODE\C++\SFML\LearnSFML\src\Animation.cpp;E:\CODE\C++\SFML\LearnSFML\build\MySFMLProject.dir\Debug\Animation.obj
 E:\CODE\C++\SFML\LearnSFML\src\PowerUp.cpp;E:\CODE\C++\SFML\LearnSFML\build\MySFMLProject.dir\Debug\PowerUp.obj
 E:\CODE\C++\SFML\LearnSFML\src\ParticleSystem.cpp;E:\CODE\C++\SFML\LearnSFML\build\MySFMLProject.dir\Debug\ParticleSystem.obj
+E:\CODE\C++\SFML\LearnSFML\src\FastEnemy.cpp;E:\CODE\C++\SFML\LearnSFML\build\MySFMLProject.dir\Debug\FastEnemy.obj
+E:\CODE\C++\SFML\LearnSFML\src\RangedEnemy.cpp;E:\CODE\C++\SFML\LearnSFML\build\MySFMLProject.dir\Debug\RangedEnemy.obj
+E:\CODE\C++\SFML\LearnSFML\src\SlowEnemy.cpp;E:\CODE\C++\SFML\LearnSFML\build\MySFMLProject.dir\Debug\SlowEnemy.obj

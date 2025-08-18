@@ -27,6 +27,9 @@ add_executable(${PROJECT_NAME}
     src/Animation.cpp
     src/PowerUp.cpp
     src/ParticleSystem.cpp
+    src/FastEnemy.cpp
+    src/RangedEnemy.cpp
+    src/SlowEnemy.cpp
 
 
     include/Game.h
@@ -37,6 +40,9 @@ add_executable(${PROJECT_NAME}
     include/Animation.h
     include/PowerUp.h
     include/ParticleSystem.h
+    include/FastEnemy.h
+    include/RangedEnemy.h
+    include/SlowEnemy.h
 )
 
 # 7. Link SFML libraries to your executable

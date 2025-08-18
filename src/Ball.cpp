@@ -12,7 +12,7 @@ Ball::Ball(float radius, sf::Vector2f position, sf::Color color, sf::Vector2f ve
 	
 }
 
-void Ball::update(float deltaTime, unsigned int windowWidth, unsigned int windowHeight)
+void Ball::update(float deltaTime, unsigned int windowWidth, unsigned int windowHeight, const sf::Vector2f& playerPos)
 {
 	velocity.y += 500.f * deltaTime;//gravity
 	shape.move(velocity * deltaTime);

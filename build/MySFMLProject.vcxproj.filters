@@ -28,6 +28,15 @@
     <ClCompile Include="E:\CODE\C++\SFML\LearnSFML\src\ParticleSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="E:\CODE\C++\SFML\LearnSFML\src\FastEnemy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\CODE\C++\SFML\LearnSFML\src\RangedEnemy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\CODE\C++\SFML\LearnSFML\src\SlowEnemy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="E:\CODE\C++\SFML\LearnSFML\include\Game.h">
@@ -52,6 +61,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="E:\CODE\C++\SFML\LearnSFML\include\ParticleSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\CODE\C++\SFML\LearnSFML\include\FastEnemy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\CODE\C++\SFML\LearnSFML\include\RangedEnemy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\CODE\C++\SFML\LearnSFML\include\SlowEnemy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

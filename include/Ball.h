@@ -9,7 +9,7 @@ private:
 	sf::Vector2f velocity;
 public:
 	Ball(float radius, sf::Vector2f position, sf::Color color, sf::Vector2f velocity);
-	void update(float deltaTime,unsigned int windowWidth, unsigned int WindowHeight) override;
+	void update(float deltaTime,unsigned int windowWidth, unsigned int WindowHeight, const sf::Vector2f& playerPos) override;
 	void draw(sf::RenderWindow& draw) const override;
 	sf::Vector2f getPosition() const;
 

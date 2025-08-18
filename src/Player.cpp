@@ -39,7 +39,7 @@ Player::Player(const std::string& textureFile, sf::Vector2f position, float spee
 }
 
 
-void Player::update(float dt, unsigned int windowWidth, unsigned int windowHeight)
+void Player::update(float dt, unsigned int windowWidth, unsigned int windowHeight, const sf::Vector2f& playerPos)
 {
 	//update animation (set next frame in vector if time has passed)
 	animation.update(dt);

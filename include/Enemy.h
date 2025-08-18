@@ -15,8 +15,8 @@ private:
 	float health;
 public:
 	Enemy(const std::string& textureFile, sf::Vector2f position, float speed);
-	void update(float dt, unsigned int windowWidth, unsigned int windowHeight) override;
-	void update(float dt, unsigned int windowWidth, unsigned int windowHeight, const sf::Vector2f& playerPos);
+	void update(float dt, unsigned int windowWidth, unsigned int windowHeight, const sf::Vector2f& playerPos) override;
+
 	void draw(sf::RenderWindow& window) const override;
 	sf::FloatRect getBounds() const override;
 	float getRadius() const override;

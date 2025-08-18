@@ -27,7 +27,7 @@ Enemy::Enemy(const std::string& textureFile, sf::Vector2f position, float speed)
 	animation.addFrame(sf::IntRect(160, 0, 32, 32));
 }
 
-void Enemy::update(float dt, unsigned int windowWidth, unsigned int windowHeight)
+void Enemy::update(float dt, unsigned int windowWidth, unsigned int windowHeight, const sf::Vector2f& playerPos)
 {
 	
 
@@ -55,10 +55,6 @@ void Enemy::update(float dt, unsigned int windowWidth, unsigned int windowHeight
 	std::cout << "ENEMY IS UPDATING" << std::endl;
 }
 
-void Enemy::update(float dt, unsigned int windowWidth, unsigned int windowHeight, const sf::Vector2f& playerPos)
-{
-	this->playerPos = playerPos; // Store the player position
-}
 
 void Enemy::draw(sf::RenderWindow& window) const
 {

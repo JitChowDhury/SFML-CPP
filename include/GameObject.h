@@ -6,7 +6,7 @@ class GameObject
 public:
 	virtual ~GameObject() = default;
 	//update (deltatime , windowWidth , windowHeight);
-	virtual void update(float dt, unsigned int windowWidth, unsigned int windowHeight) = 0;
+	virtual void update(float dt, unsigned int windowWidth, unsigned int windowHeight, const sf::Vector2f& playerPos = sf::Vector2f()) = 0;
 	//draw in renderWindow(pass by ref cause window is large object)
 	virtual void draw(sf::RenderWindow& window) const = 0;
 	//return the bounds
