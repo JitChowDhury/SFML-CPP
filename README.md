@@ -5,7 +5,7 @@
 ![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-lightgrey.svg)
 ![Status](https://img.shields.io/badge/Status-Learning%20Project-orange.svg)
 
-A simple **2D game built in C++ with SFML** as my first step into game development.  
+A simple **2D game built in C++ with SFML** as my first step into SFML.  
 This project was made to **learn OOP, game loops, animations, collisions, and resource management** in C++.  
 
 ---
