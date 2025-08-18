@@ -49,4 +49,4 @@ Through this project I practiced both **C++** and **game development concepts**:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/sfml-learning-game.git
+   git clone https://github.com/JitChowDhury/SFML-CPP.git
