@@ -12,8 +12,8 @@ private:
 	Animation animation;
 	sf::Vector2f playerPos;
 	float speed;
-	float health;
 public:
+	float health;
 	Enemy(const std::string& textureFile, sf::Vector2f position, float speed);
 	void update(float dt, unsigned int windowWidth, unsigned int windowHeight, const sf::Vector2f& playerPos) override;
 

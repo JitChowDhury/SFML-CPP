@@ -151,11 +151,18 @@ void Game::Update()
 	deltaTime = deltaClock.restart().asSeconds();//returns the time took to render last frame as seconds
 	
 
-	levelTimer += deltaTime; // New
-	if (levelTimer >= 30.f) { // New
+	levelTimer += deltaTime; 
+	if (levelTimer >= 20.f) { 
 		level++;
 		levelTimer = 0.f;
-		objects.emplace_back(std::make_unique<Enemy>("assets/enemy.png", sf::Vector2f(100.f, 100.f), 100.f + level * 20.f));
+		std::random_device rd;
+		std::mt19937 gen(rd());
+		std::uniform_int_distribution<int> dist(1, 3);
+		switch (dist(gen)) {
+		case 1: objects.emplace_back(std::make_unique<FastEnemy>("assets/fast.png", sf::Vector2f(100.f, 100.f), 100.f)); break;
+		case 2: objects.emplace_back(std::make_unique<SlowEnemy>("assets/slow.png", sf::Vector2f(100.f, 100.f), 100.f)); break;
+	
+		}
 		objects.emplace_back(std::make_unique<Ball>(20.f, sf::Vector2f(600.f, 100.f), sf::Color::Yellow, sf::Vector2f(-150.f - level * 50.f, 100.f)));
 
 	}

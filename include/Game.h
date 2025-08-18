@@ -5,6 +5,8 @@
 #include "Ball.h"
 #include "Player.h"
 #include "Enemy.h"
+#include "FastEnemy.h"
+#include "SlowEnemy.h"
 #include "PowerUp.h"
 #include "ParticleSystem.h"
 
